@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Comments</title>
+  </head>
+  <body>
+    <h1>Comments</h1>
+    <ul>
+      {% for comment in comments %}
+        <li>{{ comment[0]|safe }}</li>
+      {% endfor %}
+    </ul>
+    <a href="/">Go back</a>
+  </body>
+</html>

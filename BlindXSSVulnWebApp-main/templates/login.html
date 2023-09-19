@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<style>
+		body {
+			background-color: #e6e6e6;
+			font-family: Arial, sans-serif;
+		}
+		form {
+			margin: auto;
+			padding: 20px;
+			background-color: #f2f2f2;
+			width: 50%;
+			border-radius: 5px;
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+		}
+		h1 {
+			text-align: center;
+			color: #2db862;
+		}
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		input[type=submit] {
+			background-color: #4e24b1;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		input[type=submit]:hover {
+			background-color: #30addf;
+		}
+	</style>
+</head>
+<body>
+	<form action="http://localhost:5000/login" method="POST">
+		<h1>Online Dating</h1>
+		<h2>Meet mature women near you (its not a scam)</h2>
+		<p>Please login with your details</p>
+	<img src="https://i.pinimg.com/originals/5e/34/3f/5e343f6f9a077f9f061f021f0d40594c.png" alt="It's defintiely real" width = "150" height = "100">
+
+
+		<div></div>
+		<label for="id">Username:</label>
+		<input name="id" type="text" placeholder="Enter Username">
+		<label for="psw">Password:</label>
+		<input name="psw" type="password" placeholder="Enter Password">
+		<input type="submit" value="Login">		
+		<!-- Display Flash Messages -->
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="flash-messages">
+					<ul>
+						{% for message in messages %}
+							<li>{{ message }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		{% endwith %}
+	</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blind XSS</title>
+	<style>
+		body {
+			background-color: #e6e6e6;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			color: #ff4d4d;
+		}
+		button {
+			background-color: #ff4d4d;
+			color: white;
+			padding: 14px 20px;
+			margin-top: 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: bold;
+			display: block;
+			margin: auto;
+		}
+		button:hover {
+			background-color: #cc0000;
+		}
+	</style>
+</head>
+<body>
+	<h1>Blind XSS Demo</h1>
+	<p>This is a demonstration of Blind XSS.</p>
+
+
+	
+	<button onclick="window.location.href='/thankyou';">Send a message to the adminn</button>	
+	<div></div>
+	{% if text %}
+		<a href="/comments">View Comments</a>
+		<div></div>
+		<form method="POST" action="/delete_comments">
+    <button type="submit">Delete all comments</button>
+</form>
+	{% endif %}
+	<a href="/logout">Log Out</a>
+	
+
+</body>
+</html>
+
